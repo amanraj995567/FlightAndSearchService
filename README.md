@@ -12,8 +12,6 @@
   "development": {
     "username": "YOUR_USERNAME",
     "password": <YOUR_DB_PASSWORD>,
-    "username": "root",
-    "password": "Rohit#####9955",
     "database": "Flights_Search_DB_DEV",
     "host": "127.0.0.1",
     "dialect": "mysql"
