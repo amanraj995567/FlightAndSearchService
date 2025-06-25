@@ -54,7 +54,7 @@ class CityRepository{
     ////////////////////////////
     async getCity(cityId){
         try{
-           const city = await City.findOne(cityId);
+           const city = await City.findByPK(cityId);
            return city;
         }
         catch(error){
