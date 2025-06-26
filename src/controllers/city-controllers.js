@@ -1,29 +1,33 @@
-const {CityService, CityService} = require('../services/index');
+const {CityService} = require('../services/index');
 
 
 const cityService = new CityService();
 
 
-const create = async (req , res)=>{
-    try{
-      const city = await cityService.createCity(req.body);
-      return res.status(201).json({
-         data:city,
-         success:true,
-         message:"City successfully created",
-         error: {}
-      })
-    }
-    catch(error){
-         console.log(error);
-         return res.status(500).json({
-            data:{},
+const create = async (req, res) => {
+    try {
+        const city = await cityService.createCity(req.body);
+        return res.status(201).json({
+            data: city,
+            success: true,
+            message: "City successfully created",
+            error: {}
+        });
+    } catch (error) {
+        console.error(error);
+
+        return res.status(500).json({
+            data: {},
             success: false,
-            message:"Not able to create a body",
-            err:error
-         })
+            message: "Not able to create a city",
+            err: error
+        });
     }
-}
+};
+
+
+
+
 
 const destroy = async (req , res)=>{
      try{
@@ -38,7 +42,7 @@ const destroy = async (req , res)=>{
 
      catch(error){
          console.log(error);
-         return res.status(500).json({
+         return res.status(501).json({
             data:{},
             success: false,
             message:"Not able to delete a city",
@@ -62,7 +66,7 @@ const get = async (req , res)=>{
     }
     catch(error){
          console.log(error);
-         return res.status(500).json({
+         return res.status(502).json({
             data:{},
             success: false,
             message:"Not able to fetch a city",
@@ -85,7 +89,7 @@ const update = async (req , res)=>{
     }
     catch(error){
          console.log(error);
-         return res.status(500).json({
+         return res.status(503).json({
             data:{},
             success: false,
             message:"Not able to update a city",
