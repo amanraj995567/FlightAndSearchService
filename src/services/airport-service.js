@@ -6,8 +6,6 @@ class AirportService extends CrudService {
         const airplaneRepository = new AirportRepository(repository);
         super(airplaneRepository);
     }
-
-    // You can add more methods specific to AirportService here if needed
 }
 
 module.exports = AirportService;
