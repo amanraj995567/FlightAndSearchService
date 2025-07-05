@@ -1,4 +1,4 @@
-const {FlightService, FlightService} = require('../services/index');
+const {FlightService} = require('../services/index');
 
 
 const flightService = new FlightService();

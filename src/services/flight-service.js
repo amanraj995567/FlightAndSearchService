@@ -1,5 +1,5 @@
 
-const { FlightRepository,AirplaneRepository} = require('../repository/index');
+const { FlightRepository, AirplaneRepository} = require('../repository/index');
  
 class FlightService {
 

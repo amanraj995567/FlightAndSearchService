@@ -1,20 +1,12 @@
-const {Airplane} = require('../models/index'); 
+const {Airplane} = require('../models/index');
+const CrudRepository = require('./crud-repository');
 
-class AirplaneRepository {
-    async getAirplane(id){
+class AirplaneRepository extends CrudRepository {
 
-        try {
-
-            const airplane = await Airplane.findByPk(id);
-            return airplane;
-            
-        } catch (error) {
-
-            throw new Error(`Error creating flight: ${error.message}`);
-            
-        }
-
+    constructor() {
+        super(Airplane);
     }
+    
 }
 
 module.exports = AirplaneRepository;
